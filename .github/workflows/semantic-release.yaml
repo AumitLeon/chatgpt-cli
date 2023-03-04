@@ -27,9 +27,14 @@ jobs:
         git config --global user.name "github-actions"
         git config --global user.email "github-actions@github.com"
 
-    - name: Publish
+    - name: Publish Release
       run: pdm run semantic-release publish -v DEBUG
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REPOSITORY_USERNAME: ${{ secrets.PYPI_USERNAME }}
         REPOSITORY_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+
+    - name: Publish Changelog 
+      run: |
+        git add -u 
+        git commit -m "[CI] BUMP VERSION and COMMIT CHANGELOG"
