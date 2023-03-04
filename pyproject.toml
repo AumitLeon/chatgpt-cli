@@ -1,5 +1,6 @@
 [tool.pdm]
 version = { source = "file", path = "chatgpt_cli/__version__.py" }
+readme = "README.md"
 
 [tool.pdm.dev-dependencies]
 dev = [
@@ -33,6 +34,7 @@ build-backend = "pdm.pep517.api"
 [tool.pdm.build]
 includes = [
     "chatgpt_cli/",
+    "README.md",
 ]
 
 [project.scripts]
