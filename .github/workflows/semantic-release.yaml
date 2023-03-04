@@ -31,5 +31,5 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REPOSITORY_USERNAME: __token__ # for PYPI
-        REPOSITORY_PASSWORD: ${{ secrets.PYPY_TOKEN }}
+        REPOSITORY_PASSWORD: ${{ secrets.PYPI_TOKEN }}
         
