@@ -6,3 +6,4 @@ build/
 dist/
 experiments/
 .pdm.toml
+.ruff_cache

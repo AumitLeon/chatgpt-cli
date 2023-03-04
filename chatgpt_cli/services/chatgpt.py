@@ -11,20 +11,19 @@ class ChatGPTMessage(BaseModel):
     role: str
     content: str
 
+
 class ChatGPTChoices(BaseModel):
     message: ChatGPTMessage
     finish_reason: Optional[str] = None
     index: int
+
 
 class ChatGPTResponse(BaseModel):
     choices: List[ChatGPTChoices]
 
 
 def query_chatgpt(prompt: str) -> ChatGPTResponse:
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-                {"role": "user", "content": prompt}
-            ]
+    response: dict = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo", messages=[{"role": "user", "content": prompt}]
     )
     return ChatGPTResponse(**response)
