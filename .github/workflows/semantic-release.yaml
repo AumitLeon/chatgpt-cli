@@ -19,21 +19,8 @@ jobs:
       uses: pdm-project/setup-pdm@v3
       with:
         python-version: 3.11  # Version range or exact version of a Python version to use, the same as actions/setup-python
-
-    - name: Move PDM Install to Path
-      run: echo "/home/runner/.local/bin" >> $GITHUB_PATH
-    - name: Check Path
-      run: echo $PATH
-    - name: Check GitHub Path
-      run: echo $GITHUB_PATH
-    - name: See file contents
-      run: cat $GITHUB_PATH
     - name: Install dependencies
       run: pdm install       # Then you can use pdm in the following steps.
 
-    - name: Python Semantic Release
-      uses: relekang/python-semantic-release@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        repository_username: __token__
-        repository_password: ${{ secrets.PYPI_TOKEN }}
+    - name: Publish
+      run: pdm semantic-release publish -v DEBUG
