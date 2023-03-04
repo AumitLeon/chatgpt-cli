@@ -10,7 +10,7 @@ dev = [
 
 [project]
 name = "chatgpt-api-cli"
-version = "0.0.4"
+version = "0.0.5"
 description = "A CLI wrapper for OpenAI's ChatGPT API"
 authors = [
     {name = "Aumit Leon", email = "aumitleon@gmail.com"},

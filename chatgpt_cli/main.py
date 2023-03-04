@@ -1,6 +1,8 @@
 import typer
 from pathlib import Path
 from chatgpt_cli.services.chatgpt import query_chatgpt
+from chatgpt_cli.services.chatgpt import ChatGPTResponse
+
 
 app = typer.Typer()
 
@@ -14,7 +16,7 @@ def init(
     open_api_key: str = typer.Argument(..., help="Your OpenAI API key"),
 ):
     """Generate the .env file."""
-    print(config_path)
+    print(f"Config file: {config_path}")
     if not config_path.is_file():
         print("Config file doesn't exist yet, creating it...")
     else:
@@ -30,8 +32,8 @@ def init(
 @app.command()
 def prompt(prompt: str = typer.Argument(..., help="Prompt for ChatGPT")):
     """Query ChatGPT with a prompt."""
-    res = query_chatgpt(prompt=prompt)
-    print(res.choices[0].message.content)
+    response: ChatGPTResponse = query_chatgpt(prompt=prompt)
+    print(response.choices[0].message.content)
 
 
 def main():

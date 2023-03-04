@@ -2,11 +2,11 @@
 
 ![PyPI](https://img.shields.io/pypi/v/chatgpt-api-cli?style=for-the-badge)
 
-A simple CLI wrapper for the ChatGPT API. 
+A simple CLI wrapper for the [ChatGPT API](https://platform.openai.com/docs/guides/chat/introduction). 
 
 Installation:
 ```
-$ pip install chat-gpt-cli
+$ pip install chatgpt-api-cli
 ```
 
 Setup:

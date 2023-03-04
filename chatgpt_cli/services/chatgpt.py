@@ -23,7 +23,7 @@ class ChatGPTResponse(BaseModel):
 
 
 def query_chatgpt(prompt: str) -> ChatGPTResponse:
-    response = openai.ChatCompletion.create(
+    response: dict = openai.ChatCompletion.create(
         model="gpt-3.5-turbo", messages=[{"role": "user", "content": prompt}]
     )
     return ChatGPTResponse(**response)
