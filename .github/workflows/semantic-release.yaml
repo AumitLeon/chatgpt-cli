@@ -34,7 +34,8 @@ jobs:
         REPOSITORY_USERNAME: ${{ secrets.PYPI_USERNAME }}
         REPOSITORY_PASSWORD: ${{ secrets.PYPI_TOKEN }}
 
-    - name: Publish Changelog 
+    - name: Publish Version Bump and Changelog 
       run: |
         git add -u 
         git commit -m "[CI] BUMP VERSION and COMMIT CHANGELOG"
+        git push -u origin main
