@@ -23,4 +23,9 @@ jobs:
       run: pdm install       # Then you can use pdm in the following steps.
 
     - name: Publish
-      run: pdm semantic-release publish -v DEBUG
+      run: pdm run semantic-release publish -v DEBUG
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        REPOSITORY_USERNAME: __token__ # for PYPI
+        REPOSITORY_PASSWORD: ${{ secrets.PYPY_TOKEN }}
+        
