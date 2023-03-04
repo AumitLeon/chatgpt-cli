@@ -26,6 +26,8 @@ jobs:
       run: echo $PATH
     - name: Check GitHub Path
       run: echo $GITHUB_PATH
+    - name: See file contents
+      run: cat $GITHUB_PATH
     - name: Install dependencies
       run: pdm install       # Then you can use pdm in the following steps.
 
