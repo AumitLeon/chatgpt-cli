@@ -23,6 +23,15 @@ class ChatGPTResponse(BaseModel):
 
 
 def query_chatgpt(prompt: str) -> ChatGPTResponse:
+    """
+    Query ChatGPT with a prompt.
+
+    Args:
+        prompt (str): The prompt to query ChatGPT with.
+
+    Returns:
+        ChatGPTResponse: The response from ChatGPT.
+    """
     response: dict = openai.ChatCompletion.create(
         model="gpt-3.5-turbo", messages=[{"role": "user", "content": prompt}]
     )
