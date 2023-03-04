@@ -40,3 +40,4 @@ chatgpt = "chatgpt_cli.main:main"
 
 [tool.semantic_release]
 version_variable = "chatgpt_cli/__version__.py:__version__"
+version_source = "tag"
