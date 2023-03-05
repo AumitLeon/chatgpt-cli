@@ -45,3 +45,8 @@ version_variable = "chatgpt_cli/__version__.py:__version__"
 version_source = "tag"
 branch = "main"
 build_command = "pdm build"
+
+[tool.pdm.scripts]
+shell = "ipython"
+publish_release = "pdm run semantic-release publish -v DEBUG"
+commit_release_artifacts = {shell = "./tools/commit_release_artifacts.sh"}
