@@ -1,7 +1,8 @@
 # ChatGPT CLI
-
-![PyPI](https://img.shields.io/pypi/v/chatgpt-api-cli?color=blue&style=for-the-badge)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/aumitleon/chatgpt-cli/semantic-release.yaml?color=geen&style=for-the-badge)
+[![PyPI version](https://badge.fury.io/py/chatgpt-api-cli.svg)](https://badge.fury.io/py/chatgpt-api-cli)
+[![Semantic Release](https://github.com/AumitLeon/chatgpt-cli/actions/workflows/semantic-release.yaml/badge.svg?branch=main)](https://github.com/AumitLeon/chatgpt-cli/actions/workflows/semantic-release.yaml)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 
 A simple python CLI wrapper for the [ChatGPT API](https://platform.openai.com/docs/guides/chat/introduction). 
