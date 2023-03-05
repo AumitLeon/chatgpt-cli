@@ -1,6 +1,5 @@
 [tool.pdm]
 version = { source = "file", path = "chatgpt_cli/__version__.py" }
-readme = "README.md"
 
 [tool.pdm.dev-dependencies]
 dev = [
@@ -16,6 +15,7 @@ dev = [
 name = "chatgpt-api-cli"
 dynamic = ["version"]
 description = "A CLI wrapper for OpenAI's ChatGPT API"
+readme = "README.md"
 authors = [
     {name = "Aumit Leon", email = "aumitleon@gmail.com"},
 ]
@@ -27,6 +27,7 @@ dependencies = [
 ]
 requires-python = ">=3.11"
 license = {text = "MIT"}
+urls = { repository = "https://github.com/AumitLeon/chatgpt-cli" }
 
 [build-system]
 requires = ["pdm-pep517"]
