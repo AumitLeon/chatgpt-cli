@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.1 (2023-03-05)
+### Fix
+* Metadata for pypi package ([#12](https://github.com/AumitLeon/chatgpt-cli/issues/12)) ([`d848a42`](https://github.com/AumitLeon/chatgpt-cli/commit/d848a422de21281cc5498ff90dff62a03506be4d))
+
 ## v0.2.0 (2023-03-05)
 ### Feature
 * **chat:** New cli command for continuous chat ([#11](https://github.com/AumitLeon/chatgpt-cli/issues/11)) ([`c4dbaba`](https://github.com/AumitLeon/chatgpt-cli/commit/c4dbababb33a752c9e08c119989755a5ee1f24af))
