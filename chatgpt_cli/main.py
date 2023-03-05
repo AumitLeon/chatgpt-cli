@@ -2,7 +2,9 @@ import typer
 from pathlib import Path
 from chatgpt_cli.services.chatgpt import query_chatgpt
 from chatgpt_cli.services.chatgpt import ChatGPTResponse
+from rich.console import Console
 
+console = Console()
 
 app = typer.Typer()
 
@@ -26,14 +28,32 @@ def init(
     with config_path.open("w", encoding="utf-8") as f:
         f.write(f"OPENAI_API_KEY={open_api_key}")
 
-    print("Done!")
+    console.print("Done!", style="bold green")
 
 
 @app.command()
 def prompt(prompt: str = typer.Argument(..., help="Prompt for ChatGPT")):
     """Query ChatGPT with a prompt."""
     response: ChatGPTResponse = query_chatgpt(prompt=prompt)
-    print(response.choices[0].message.content)
+    message = response.choices[0].message.content.strip()
+    console.print(f"\n{message}", style="bold cyan")
+
+
+@app.command()
+def chat():
+    """Chat with ChatGPT."""
+    console.print("To exit, type `exit` or press CTRL+C", style="bold yellow")
+    while True:
+        prompt = typer.prompt("\nYou")
+        if prompt.lower() in ("exit", "quit"):
+            exit = typer.confirm("Are you sure you want to exit?")
+            if exit:
+                console.print("Goodbye!", style="bold green")
+                return
+        else:
+            response: ChatGPTResponse = query_chatgpt(prompt=prompt)
+            message = response.choices[0].message.content.strip()
+            console.print(f"ChatGPT: {message}", style="bold cyan")
 
 
 def main():
